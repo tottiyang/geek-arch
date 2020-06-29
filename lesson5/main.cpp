@@ -1,11 +1,12 @@
 #include "consistent_hash.h"
 #include "stdlib.h"
 #include <iostream>
+#include "math.h"
 
 int main() {
-    // 十台机器，共100个虚拟节点
+    // 10台机器，共100000个虚拟节点
     int server_count = 10;
-    int virtual_node_count = 10;
+    int virtual_node_count = 10000;
     int key_count = 1000000; 
     int counter[10];
     char string_tmp[10];
@@ -23,9 +24,13 @@ int main() {
         counter[index]++;
     }
 
+    int variance = 0;
     for (int i=0; i<server_count; i++) {
         std::cout << "server[" << i << "]:" << counter[i] << std::endl;
+        variance += (100000 - counter[i]) * (100000 - counter[i]);
     }
+
+    std::cout << "deviation:" << sqrt(variance/10) << std::endl;
 
     return 0;
 }
