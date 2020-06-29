@@ -1,0 +1,11 @@
+server[0]:113974
+server[1]:53179
+server[2]:50393
+server[3]:133713
+server[4]:74370
+server[5]:157160
+server[6]:107143
+server[7]:90045
+server[8]:140632
+server[9]:79391
+

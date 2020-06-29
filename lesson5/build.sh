@@ -1,0 +1,1 @@
+g++ consistent_hash.cpp main.cpp -o test
