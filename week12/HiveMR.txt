@@ -1,0 +1,5 @@
+不太懂，试一下
+map函数输入是table (page_view , user), key (userid), 
+      输出是什么，key (userid), value <talbe, pageid/age>
+reduce函数输入是key (userid), value <talbe, pageid/age>
+      输出是 pageid, age
