@@ -1,5 +1,28 @@
-不太懂，试一下
-map函数输入是table (page_view , user), key (userid), 
-      输出是什么，key (userid), value <talbe, pageid/age>
-reduce函数输入是key (userid), value <talbe, pageid/age>
-      输出是 pageid, age
+map函数输入的是key value。 key是偏移量，value是一行记录或
+
+key	value
+偏移量	<111,1>
+偏移量	<111,2>
+偏移量	<222,1>
+key	value
+偏移量	<111,25>
+偏移量	<222,32>
+map函数输出是key value。key是userid， value是 <表编号，pageid> 或 <表编号，age>
+
+key	value
+111	<1,1>
+111	<1,2>
+222	<1,1>
+111	<2,25>
+222	<2,32>
+reduce函数输入是key values。key 是 userid , values是相同userid合并的value列表： <表编号，pageid> <表编号，age>
+
+key	values
+111	<1,1> <1,2> <2,25>
+222	<1,1> <2,32>
+
+reduce输出是pv_users
+
+1	25
+2	25
+1	32
